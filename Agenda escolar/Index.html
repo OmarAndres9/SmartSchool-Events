@@ -14,22 +14,38 @@
             font-family: Arial, Helvetica, sans-serif;
         }
         Menu {
-            background-color: #6BBD6E;
-            width: 20%;
-            display: grid;
+            background-color: #358438;
             float: left;
+            border-radius: 5px;
+            min-height: 20px ;
+            margin-top: auto;
         }
         menu .navegacion{
             margin-top: auto;
             padding-top: 10px;
             
         }
+        menu .alertas{
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
 
+        .agenda{
+            background-color: #4CAF50;
+            padding-top: 20;
+            margin-top: auto;
+            padding-bottom: 20px;
+            border-radius: 5px;
+            flex: auto;
+            justify-items: center;
+            
+            
+        }
 
 
     </style>
 
-
+<div class="contenedor"></div>
 
     <menu>
         <h1 class="title">MENU</h1>
@@ -54,15 +70,17 @@
         <div class="navegacion">
             <button class="button is-success">logistica</button>
         </div>
-
+        <Div class="alertas">
         <h2 class="eventos_destacados">eventos destacados</h2>
         <button class="button is-primary">feria escolar</button>
         <h2 class="eventos_NoInscrito">Eventos no Inscritos</h2>
         <button class="button is-link">Campeonato de fultbol</button>
-
+        </Div>
     </menu>
-    <div class="contenedor">
+    
+        <div class="agenda">
         <h1 class="title">Agenda Escolar</h1>
+        </div>
         <iframe src="https://calendar.google.com/calendar/embed?src=tu_email%40gmail.com&ctz=America%2FBogota"
     style="border:0" width="400" height="300" frameborder="0" scrolling="no"></iframe>
     
