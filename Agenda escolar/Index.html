@@ -1,122 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agenda Escolar</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda Escolar</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+  <style>
+    * {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .sidebar {
+      background-color: #358438;
+      border-radius: 5px;
+      padding: 20px;
+      width: 250px;
+    }
+
+    .sidebar h1 {
+      color: white;
+    }
+
+    .navegacion,
+    .alertas {
+      margin-top: 15px;
+    }
+
+    .agenda {
+      background-color: #4CAF50;
+      padding: 20px;
+      border-radius: 5px;
+      margin: 20px auto;
+      max-width: 800px;
+      text-align: center;
+      color: white;
+    }
+
+    .mapa {
+      display: block;
+      margin: 30px auto;
+    }
+
+    .contenido {
+      display: flex;
+      gap: 30px;
+      padding: 20px;
+    }
+
+    .eventos_destacados,
+    .eventos_NoInscrito {
+      color: white;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+  </style>
 </head>
 
 <body>
-    <style>
-        *{
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        Menu {
-            background-color: #358438;
-            float: left;
-            border-radius: 5px;
-            min-height: 20px ;
-            margin-top: auto;
-        }
-        menu .navegacion{
-            margin-top: auto;
-            padding-top: 10px;
-            margin-right: 30px;
-            
-        }
-        menu .alertas{
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
+  <div class="columns is-gapless">
+    <!-- Menú lateral -->
+    <aside class="sidebar column is-narrow">
+      <h1 class="title is-4">MENÚ</h1>
+      <div class="navegacion">
+        <a href="../VENTANA EMERGENTE/Ventana-emergente.html" class="button is-success is-fullwidth">Inicio</a>
+      </div>
+      <div class="navegacion">
+        <a href="../Agenda escolar/Index.html" class="button is-success is-fullwidth">Agenda Escolar</a>
+      </div>
+      <div class="navegacion">
+        <a href="../evento/Evento.html" class="button is-success is-fullwidth">Evento</a>
+      </div>
+      <div class="navegacion">
+        <a href="../Gestion Usuarios/Usuarios.html" class="button is-success is-fullwidth">Usuarios</a>
+      </div>
+      <div class="navegacion">
+        <a href="../historial de notificaciones/historial-de-notificaciones.html" class="button is-success is-fullwidth">Notificaciones</a>
+      </div>
+      <div class="navegacion">
+        <a href="../Logistica/logistica.html" class="button is-success is-fullwidth">Logística</a>
+      </div>
 
-        .agenda{
-            background-color: #4CAF50;
-            padding-top: 20;
-            margin-top: auto;
-            padding-bottom: 20px;
-            border-radius: 5px;
-            flex: auto;
-            justify-items: center;
-            
-            
-        }
-        .mapa{
-        
-            margin: 30px;
-            margin-left: 150px;
-            
-        }
-       
+      <div class="alertas">
+        <h2 class="eventos_destacados">Eventos Destacados</h2>
+        <button class="button is-primary is-fullwidth">Feria Escolar</button>
+        <h2 class="eventos_NoInscrito">Eventos No Inscritos</h2>
+        <button class="button is-link is-fullwidth">Campeonato de Fútbol</button>
+      </div>
+    </aside>
 
-    </style>
-
-<div class="contenedor"></div>
-
-    <menu>
-        <h1 class="title mt-4">MENU</h1>
-        <div class="navegacion">
-            <button class="button is-success is-fullwidth">Inicio</button>
-        </div>
-        <div class="navegacion">
-            <button class="button is-success is-fullwidth">Agenda Escolar</button>
-        </div>
-        <div class="navegacion">
-            <button class="button is-success is-fullwidth">evento</button>
-        </div>
-        <div class="navegacion">
-            <button class="button is-success is-fullwidth">usuarios</button>
-        </div>
-        <div class="navegacion">
-            <button class="button is-success is-fullwidth">Usuarios</button>
-        </div>
-        <div class="navegacion">
-            <button class="button is-success is-fullwidth">notificaciones</button>
-        </div>
-        <div class="navegacion">
-            <button class="button is-success is-fullwidth">logistica</button>
-        </div>
-        <Div class="alertas">
-        <h2 class="eventos_destacados">eventos destacados</h2>
-        <button class="button is-primary">feria escolar</button>
-        <h2 class="eventos_NoInscrito">Eventos no Inscritos</h2>
-        <button class="button is-link">Campeonato de fultbol</button>
-        </Div>
-    </menu>
-    
-        <div class="agenda has-text-centered p-3">
+    <!-- Contenido principal -->
+    <div class="column">
+      <section class="agenda">
         <h1 class="title">Agenda Escolar</h1>
-        </div>
-        <iframe class="mapa" src="https://calendar.google.com/calendar/embed?src=tu_email%40gmail.com&ctz=America%2FBogota"
-    style="border:0" width="400" height="300" frameborder="0" scrolling="no"></iframe>
-    
-    <div class="card" style="max-width: 400px; margin:auto;">
-  <div class="card-content">
-    <ul>
-      <li class="is-flex is-justify-content-space-between">
-        <span>📌 <strong>FERIA DE CIENCIA</strong></span>
-        <span>1 de Septiembre</span>
-      </li>
-      <li class="is-flex is-justify-content-space-between mt-2">
-        <span>🎶 Banda Escolar</span>
-        <span>5 de Septiembre</span>
-      </li>
-      <li class="is-flex is-justify-content-space-between mt-2">
-        <span>📝 Simulacro ICFES</span>
-        <span>15 de Septiembre</span>
-      </li>
-      <li class="is-flex is-justify-content-space-between mt-2">
-        <span>⚽ Torneo Deportivo</span>
-        <span>20 de Octubre</span>
-      </li>
-    </ul>
-  </div>
-  <footer class="card-footer">
-    <a href="#" class="card-footer-item button is-success is-light">✏️ Editar Agenda</a>
-  </footer>
+      </section>
 
-    
+      <iframe class="mapa"
+        src="https://calendar.google.com/calendar/embed?src=your_email%40gmail.com&ctz=America%2FBogota"
+        style="border:0;" width="400" height="300" frameborder="0" scrolling="no">
+      </iframe>
+
+      <div class="card" style="max-width: 400px; margin: 20px auto;">
+        <div class="card-content">
+          <ul>
+            <li class="is-flex is-justify-content-space-between">
+              <span>📌 <strong>FERIA DE CIENCIA</strong></span>
+              <span>1 de Septiembre</span>
+            </li>
+            <li class="is-flex is-justify-content-space-between mt-2">
+              <span>🎶 Banda Escolar</span>
+              <span>5 de Septiembre</span>
+            </li>
+            <li class="is-flex is-justify-content-space-between mt-2">
+              <span>📝 Simulacro ICFES</span>
+              <span>15 de Septiembre</span>
+            </li>
+            <li class="is-flex is-justify-content-space-between mt-2">
+              <span>⚽ Torneo Deportivo</span>
+              <span>20 de Octubre</span>
+            </li>
+          </ul>
+        </div>
+        <footer class="card-footer">
+          <a href="#" class="card-footer-item button is-success is-light">✏️ Editar Agenda</a>
+        </footer>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
