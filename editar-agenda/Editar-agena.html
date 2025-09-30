@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar agenda</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+</head>
+<body>
+<style>
+    *{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    body{
+        background-color:rgba(255, 255, 255, 0.301);
+
+    }
+.title{  
+ color: rgb(67, 250, 11);
+} 
+main{
+    border-radius: 10px; 
+    margin: 50px;
+    padding: 30px;
+    background-color: rgb(47, 144, 255);
+
+
+}
+
+</style>
+
+
+
+<main>
+
+    <header>
+<section class="is-flex is-justify-content-center is-align-items-center is-success"><h1 class="title p-5">actualizar agenda</h1></section>
+    </header>
+    <div class="container"> 
+    <div class="documento">
+      <label class="label">Nombre del evento</label>
+      <input class="input" type="text" placeholder="Ej. Dia del niño">
+    </div>
+    <div class="documento">
+        <label class="label">fecha del evento</label>
+        <input class="input" type="date">
+
+    </div>
+    <div class="documento">
+        <label class="label">descripcion del evento</label>
+       <textarea class="textarea" placeholder="Haz una breve descripción..."></textarea>
+
+    </div>
+    
+    
+    <footer class="p-5 is-flex is-justify-content-center">
+        <button class="button is-primary m-1">guardar</button>
+        <button class="button is-danger m-1">cancelar</button>
+    </footer>
+    </main>
+</body>
+</html>
