@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartSchool Events - Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #31a504;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      display: flex;
+      background: #f5fdf5;
+      border-radius: 20px;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+      width: 700px;
+      overflow: hidden;
+    }
+
+    .left-panel {
+      background: linear-gradient(to bottom, #77a97a, #3c5740);
+      color: white;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      font-size: 18px;
+    }
+
+    .right-panel {
+      flex: 1.5;
+      padding: 40px;
+    }
+
+    .right-panel h2 {
+      color: #2e7d32;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .right-panel p {
+      font-size: 14px;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .btn {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background: #45a049;
+    }
+
+    .links {
+      margin-top: 15px;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .links a {
+      color: #2e7d32;
+      text-decoration: none;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <!-- Panel izquierdo -->
+    <div class="left-panel">
+      <p>Accede a SmartSchool Events y<br>
+      mantente conectado con los eventos<br>
+      de tu institución</p>
+    </div>
+
+    <!-- Panel derecho -->
+    <div class="right-panel">
+      <h2>📅 SmartSchool Events</h2>
+      <p>Bienvenido 👋, por favor inicia sesión.</p>
+
+      <form>
+        <div class="form-group">
+          <label for="usuario">Usuario:</label>
+          <input type="text" id="usuario" placeholder="Ingresa tu usuario">
+        </div>
+
+        <div class="form-group">
+          <label for="password">Contraseña:</label>
+          <input type="password" id="password" placeholder="Ingresa tu contraseña">
+        </div>
+
+        <div class="form-group">
+          <label for="rol">Rol:</label>
+          <input type="text" id="rol" placeholder="Ingresa tu rol">
+        </div>
+
+        <button type="submit" class="btn">Ingresar</button>
+      </form>
+
+      <div class="links">
+        <p><a href="#">¿Olvidaste tu contraseña?</a> | <a href="#">Recupérala aquí</a></p>
+        <p>¿Eres nuevo? <a href="#">Regístrate</a></p>
+        <p><a href="#">Contáctanos</a></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
