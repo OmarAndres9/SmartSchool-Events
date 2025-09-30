@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro del Evento Escolar</title>
+  <link rel="stylesheet" href="Evento.css">
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+      <img src="icono_circulo (1).svg" alt="Logo" width="40" height="40">
+        <h2>Registro del Evento Escolar</h2>
+      </div>
+      <h3 class="menu-title">Menu</h3>
+      <nav class="menu">
+        <a href="#">Inicio</a>
+        <a href="#">Agenda Escolar</a>
+        <a href="#">Evento</a>
+        <a href="#">Usuarios</a>
+        <a href="#">Notificaciones</a>
+        <a href="#">Logística</a>
+      </nav>
+      <div class="eventos">
+        <h4>Eventos Destacados</h4>
+        <p>Feria de Ciencias - 1 de septiembre del 2025</p>
+        <h4>Eventos Próximos</h4>
+        <p>Banda Escolar - 5 de Octubre</p>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main">
+      <h1>Completa la información en pasos simples</h1>
+
+      <section class="card">
+        <h2>1. Datos Simples</h2>
+        <label>Nombre del evento</label>
+        <input type="text" placeholder="Ej. Feria de Ciencias">
+        <label>Tipo del evento</label>
+        <select>
+          <option>Seleccione un tipo</option>
+          <option>Académico</option>
+          <option>Cultural</option>
+          <option>Deportivo</option>
+        </select>
+      </section>
+
+      <section class="card">
+        <h2>2. Programación</h2>
+        <label>Fecha</label>
+        <input type="date">
+        <label>Hora</label>
+        <input type="time">
+        <label>Ubicación</label>
+        <input type="text" placeholder="Ej. Colegio San Andrés de los Altos">
+      </section>
+
+      <section class="card">
+        <h2>3. Descripción</h2>
+        <label>Descripción del evento</label>
+        <textarea placeholder="Describa brevemente el evento"></textarea>
+      </section>
+
+      <section class="card">
+        <h2>4. Control de Personas</h2>
+        <label>Aforo Máximo</label>
+        <input type="number" placeholder="Ej. 150">
+        <label>Encargados</label>
+        <input type="text" placeholder="Ej. Profesores, Coordinadores">
+      </section>
+
+      <section class="card">
+        <h2>5. Cargar Imágenes del Evento</h2>
+        <label>Asignación de imágenes para el evento</label>
+        <input type="file">
+      </section>
+
+      <div class="actions">
+        <button class="cancelar">Cancelar</button>
+        <button class="guardar">Guardar</button>
+        <button class="publicar">Publicar evento</button>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
