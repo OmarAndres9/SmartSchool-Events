@@ -1,2 +1,3 @@
-![Evento escolar](./evento_escolar_al_aire_libre.png)
+![Evento escolar](./Evento%20escolar%20al%20aire%20libre.png)
+
 Eventos de smartSchool 
