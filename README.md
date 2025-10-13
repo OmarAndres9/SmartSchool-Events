@@ -109,5 +109,6 @@ El desarrollo está proyectado en fases progresivas durante un periodo estimado 
 ## 📊 Interfaces del Proyecto
 
 A continuación, una previa de el login:
-(./Capturas%de%pantalla/Login_gestion_eventos.png)
+![Login del sistema](./Capturas%20de%20pantalla/Login_gestion_eventos.png)
+
 
