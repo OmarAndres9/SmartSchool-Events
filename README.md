@@ -109,5 +109,5 @@ El desarrollo está proyectado en fases progresivas durante un periodo estimado 
 ## 📊 Interfaces del Proyecto
 
 A continuación, una previa de el login:
-![Evento escolar](./Capturas%de%pantalla/Login_gestion_eventos.png)
+(./Capturas%de%pantalla/Login_gestion_eventos.png)
 
