@@ -100,13 +100,14 @@ El desarrollo está proyectado en fases progresivas durante un periodo estimado 
 ## 🛠️ Tecnologías Utilizadas
 
 - **Frontend:** HTML, CSS, JavaScript, React  
-- **Backend:** Python, Node.js, Laravel  
-- **Base de datos:** SQL  
+- **Backend:** Python 
+- **Base de datos:** Progesql 
 - **Despliegue y escalabilidad:** Por definir según fase del proyecto
 
 ---
 
-## 📊 Gráficas del Proyecto
+## 📊 Interfaces del Proyecto
 
-A continuación, se integrarán las gráficas más relevantes extraídas del documento:
+A continuación, una previa de el login:
+![Evento escolar](./Evento%20escolar%20al%20aire%20libre.png)
 
