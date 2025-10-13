@@ -110,5 +110,5 @@ El desarrollo está proyectado en fases progresivas durante un periodo estimado 
 
 A continuación, una previa de el login:
 ![Login del sistema](./Capturas%20de%20pantalla/Login_gestion_eventos.png)
-
+Gestion de usuario
 ![Gestion de Usuario](./Capturas%20de%20pantalla/Gestion_de_Usuario.png)
