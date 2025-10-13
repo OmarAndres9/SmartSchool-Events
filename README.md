@@ -101,7 +101,7 @@ El desarrollo está proyectado en fases progresivas durante un periodo estimado 
 
 - **Frontend:** HTML, CSS, JavaScript, React  
 - **Backend:** Python 
-- **Base de datos:** Progesql 
+- **Base de datos:PostgreSql
 - **Despliegue y escalabilidad:** Por definir según fase del proyecto
 
 ---
