@@ -30,5 +30,6 @@ loginForm.addEventListener('submit', function(event) {
         // Aquí puedes enviar el formulario o redirigir manualmente
         alert("Inicio de sesión exitoso ✅");
         // loginForm.submit(); // Si deseas permitir el envío
+        window.location.href = "../Agenda escolar/Index.html";
     }
 });
