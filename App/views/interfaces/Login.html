@@ -106,7 +106,7 @@
   </style>
 </head>
 <body>
-  <div class="login-container">
+  <div class="login-container" id="LoginForm">
     <!-- Panel izquierdo -->
     <div class="left-panel">
       <p>Accede a SmartSchool Events y<br>
@@ -122,12 +122,14 @@
       <form action="../Agenda escolar/Index.html" method="get">
         <div class="form-group">
           <label for="usuario">Usuario:</label>
-          <input type="text" id="usuario" name="usuario" placeholder="Ingresa tu usuario" required>
+          <input type="text" id="nombre" name="usuario" placeholder="Ingresa tu usuario"  >
+          <p class="error" id="UsuarioError"></p>
         </div>
 
         <div class="form-group">
           <label for="password">Contraseña:</label>
           <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+          <p class="error" id="ContraseñaError"></p>
         </div>
 
         <div class="form-group">
@@ -150,5 +152,6 @@
       </div>
     </div>
   </div>
+  <script src="/App/publics/js/validaciones.js"></script>
 </body>
 </html>
