@@ -1,133 +1,135 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agenda Escolar</title>
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+
   <style>
     * {
       font-family: Arial, Helvetica, sans-serif;
     }
 
-    .sidebar {
-      background-color: #358438;
-      border-radius: 5px;
-      padding: 20px;
-      width: 250px;
+    body {
+      background-color: #f0f0f0;
     }
 
-    .sidebar h1 {
+    /* Sidebar */
+    .sidebar {
+      background-color: #2d7a31;
+      padding: 25px;
+      min-height: 100vh;
       color: white;
     }
 
-    .navegacion,
-    .alertas {
-      margin-top: 15px;
+    .sidebar button,
+    .sidebar a.button {
+      margin-top: 10px;
     }
 
-    .agenda {
-      background-color: #4CAF50;
-      padding: 20px;
-      border-radius: 5px;
-      margin: 20px auto;
-      max-width: 800px;
+    .event-title {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 16px;
+      color: #e0ffe0;
+    }
+
+    /* Contenido principal */
+    .main-content {
+      padding: 30px;
+    }
+
+    /* Título de Agenda */
+    .agenda-header {
+      background-color: #4caf50;
+      padding: 25px;
+      border-radius: 8px;
       text-align: center;
       color: white;
+      margin-bottom: 30px;
     }
 
     .mapa {
       display: block;
-      margin: 30px auto;
-    }
-
-    .contenido {
-      display: flex;
-      gap: 30px;
-      padding: 20px;
-    }
-
-    .eventos_destacados,
-    .eventos_NoInscrito {
-      color: white;
-      margin-top: 10px;
-      margin-bottom: 5px;
+      margin: 0 auto;
+      border-radius: 10px;
     }
   </style>
 </head>
 
 <body>
-  <div class="columns is-gapless">
-    <!-- Menú lateral -->
-    <aside class="sidebar column is-narrow">
-      <h1 class="title is-4">MENÚ</h1>
-      <div class="navegacion">
-        <a href="../VENTANA EMERGENTE/Ventana-emergente.html" class="button is-success is-fullwidth">Inicio</a>
-      </div>
-      <div class="navegacion">
-        <a href="../Agenda escolar/Index.html" class="button is-success is-fullwidth">Agenda Escolar</a>
-      </div>
-      <div class="navegacion">
-        <a href="../evento/Evento.html" class="button is-success is-fullwidth">Evento</a>
-      </div>
-      <div class="navegacion">
-        <a href="../Gestion Usuarios/Usuarios.html" class="button is-success is-fullwidth">Usuarios</a>
-      </div>
-      <div class="navegacion">
-        <a href="../historial de notificaciones/historial-de-notificaciones.html" class="button is-success is-fullwidth">Notificaciones</a>
-      </div>
-      <div class="navegacion">
-        <a href="../Logistica/logistica.html" class="button is-success is-fullwidth">Logística</a>
-      </div>
 
-      <div class="alertas">
-        <h2 class="eventos_destacados">Eventos Destacados</h2>
-        <button class="button is-primary is-fullwidth">Feria Escolar</button>
-        <h2 class="eventos_NoInscrito">Eventos No Inscritos</h2>
-        <button class="button is-link is-fullwidth">Campeonato de Fútbol</button>
-      </div>
+  <div class="columns is-gapless">
+
+    <!-- Sidebar -->
+    <aside class="sidebar column is-2">
+      <h1 class="title is-4 has-text-white">MENÚ</h1>
+
+      <a href="../VENTANA EMERGENTE/Ventana-emergente.html" class="button is-success is-fullwidth">Inicio</a>
+      <a href="../Agenda escolar/Index.html" class="button is-success is-fullwidth">Agenda Escolar</a>
+      <a href="../evento/Evento.html" class="button is-success is-fullwidth">Evento</a>
+      <a href="../Gestion Usuarios/Usuarios.html" class="button is-success is-fullwidth">Usuarios</a>
+      <a href="../historial de notificaciones/historial-de-notificaciones.html" class="button is-success is-fullwidth">Notificaciones</a>
+      <a href="../Logistica/logistica.html" class="button is-success is-fullwidth">Logística</a>
+
+      <p class="event-title">Eventos Destacados</p>
+      <button class="button is-primary is-fullwidth">Feria Escolar</button>
+
+      <p class="event-title">Eventos No Inscritos</p>
+      <button class="button is-link is-fullwidth">Campeonato de Fútbol</button>
     </aside>
 
     <!-- Contenido principal -->
-    <div class="column">
-      <section class="agenda">
+    <div class="column main-content">
+
+      <!-- Encabezado -->
+      <section class="agenda-header">
         <h1 class="title">Agenda Escolar</h1>
       </section>
 
+      <!-- Google Calendar -->
       <iframe class="mapa"
         src="https://calendar.google.com/calendar/embed?src=your_email%40gmail.com&ctz=America%2FBogota"
-        style="border:0;" width="400" height="300" frameborder="0" scrolling="no">
+        width="600" height="400" frameborder="0" scrolling="no">
       </iframe>
 
-      <div class="card" style="max-width: 400px; margin: 20px auto;">
+      <!-- Tarjeta de eventos -->
+      <div class="card mt-5" style="max-width: 500px; margin: 30px auto;">
         <div class="card-content">
           <ul>
             <li class="is-flex is-justify-content-space-between">
               <span>📌 <strong>FERIA DE CIENCIA</strong></span>
               <span>1 de Septiembre</span>
             </li>
+
             <li class="is-flex is-justify-content-space-between mt-2">
               <span>🎶 Banda Escolar</span>
               <span>5 de Septiembre</span>
             </li>
+
             <li class="is-flex is-justify-content-space-between mt-2">
               <span>📝 Simulacro ICFES</span>
               <span>15 de Septiembre</span>
             </li>
+
             <li class="is-flex is-justify-content-space-between mt-2">
               <span>⚽ Torneo Deportivo</span>
               <span>20 de Octubre</span>
             </li>
           </ul>
         </div>
+
         <footer class="card-footer">
           <a href="#" class="card-footer-item button is-success is-light">✏️ Editar Agenda</a>
         </footer>
       </div>
+
     </div>
   </div>
-  <script src="/App/publics/js/validacion_agenda.js"></script>
-</body>
 
+  <script src="/App/publics/js/validacion_agenda.js"></script>
+
+</body>
 </html>
