@@ -68,7 +68,52 @@
     </div>
   </div>
 
-  <script src="../../../public/js/validaciones.js"></script>
+  <script>
+    // Manejo de Login con Fetch
+    const form = document.querySelector('form');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const username = document.getElementById('nombre').value;
+      const password = document.getElementById('password').value;
+      const role = document.getElementById('rol').value;
+
+      // Nota: En esta implementación el rol se verifica después del login, 
+      // pero lo enviamos por si se quiere validar antes o en el backend.
+      // El backend actual busca por usuario y verifica pass.
+
+      const submitBtn = form.querySelector('button');
+      const originalBtnText = submitBtn.innerText;
+      submitBtn.innerText = 'Cargando...';
+      submitBtn.disabled = true;
+
+      try {
+        const response = await fetch('../../../src/backend/auth/login.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          // Guardar info de usuario en localStorage
+          localStorage.setItem('user', JSON.stringify(result.user));
+
+          // Redireccionar al dashboard
+          window.location.href = '../dashboard/index.html';
+        } else {
+          alert('Error: ' + (result.error || 'Credenciales inválidas'));
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Error de conexión');
+      } finally {
+        submitBtn.innerText = originalBtnText;
+        submitBtn.disabled = false;
+      }
+    });
+  </script>
 </body>
 
 </html>

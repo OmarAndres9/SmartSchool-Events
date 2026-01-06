@@ -149,6 +149,70 @@
     </form>
 
   </div>
+  <script>
+    // Manejo de Creación de Eventos
+    const form = document.querySelector('form');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Recolección de datos (ajustar selectores según el HTML actual)
+      // Nota: Los inputs no tienen ID, así que usaré selectores específicos o querySelectorAll
+      const inputs = form.querySelectorAll('input, select, textarea');
+
+      const nombre = inputs[1].value; // Nombre del evento
+      const tipo = inputs[2].value;   // Tipo
+      const fecha = inputs[3].value;  // Fecha
+      const hora = inputs[4].value;   // Hora
+      const lugar = inputs[5].value;  // Ubicación
+      const descripcion = inputs[6].value; // Detalle
+      // ... otros campos pueden ser agregados a la BD si el esquema lo permite
+
+      // Estructura para el backend
+      const eventData = {
+        nombre,
+        tipo,
+        fecha,
+        hora,
+        lugar,
+        descripcion,
+        // Valores por defecto para campos requeridos por BD que no están en el form:
+        modalidad: 'Presencial',
+        objetivo: 'General',
+        control: 'U001', // ID de usuario temporal o del login
+        grupo: 'Todos'
+      };
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.classList.add('is-loading');
+
+      try {
+        // Nota: Se requiere implementar create.php primero, pero lo dejaremos apuntado
+        const response = await fetch('../../../src/backend/events/create.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(eventData)
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          alert('Evento creado exitosamente: ' + result.eventId);
+          form.reset();
+        } else {
+          alert('Error: ' + (result.error || 'No se pudo crear el evento'));
+        }
+
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Error de conexión');
+      } finally {
+        submitBtn.classList.remove('is-loading');
+      }
+    });
+
+    // Cargar eventos existentes (Opcional, si se desea mostrar lista aquí mismo)
+    // ...
+  </script>
 </body>
 
 </html>

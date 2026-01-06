@@ -1,29 +1,65 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Registro - SmartSchool Events</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <style>
-    body { background-image: url(../../../public/img/event.jpg); min-height: 100vh; display: flex; align-items: center; justify-content: center; }
-    .card { width: 820px; border-radius: 12px; overflow: hidden; }
-    .left-panel { background: linear-gradient(180deg,#3f7e3b,#1c4f1a); color: white; padding: 3.5rem; display:flex; align-items:center; justify-content:center; }
-    .left-panel p { text-align:center; line-height:1.6; font-size:1.05rem }
-    .field .help.is-danger { display: none; }
+    body {
+      background-image: url(../../../public/img/event.jpg);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      width: 820px;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .left-panel {
+      background: linear-gradient(180deg, #3f7e3b, #1c4f1a);
+      color: white;
+      padding: 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .left-panel p {
+      text-align: center;
+      line-height: 1.6;
+      font-size: 1.05rem
+    }
+
+    .field .help.is-danger {
+      display: none;
+    }
+
     @media (max-width: 900px) {
-      .card { width: 95%; }
-      .left-panel { display:none; }
+      .card {
+        width: 95%;
+      }
+
+      .left-panel {
+        display: none;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="card">
     <div class="columns is-gapless">
       <div class="column is-5 left-panel">
         <div>
           <h3 class="title is-4" style="color: #fff; margin-bottom: 1rem">Accede a SmartSchool Events</h3>
-          <p>Mantente conectado con los eventos de tu institución. Regístrate para crear, gestionar y recibir notificaciones de forma sencilla.</p>
+          <p>Mantente conectado con los eventos de tu institución. Regístrate para crear, gestionar y recibir
+            notificaciones de forma sencilla.</p>
         </div>
       </div>
       <div class="column is-7">
@@ -70,7 +106,8 @@
                   <div class="field">
                     <label class="label">Contraseña</label>
                     <div class="control">
-                      <input class="input" type="password" id="password" placeholder="Ingresa una contraseña" required minlength="6">
+                      <input class="input" type="password" id="password" placeholder="Ingresa una contraseña" required
+                        minlength="6">
                     </div>
                     <p class="help is-danger" id="passwordHelp">La contraseña debe tener al menos 6 caracteres</p>
                   </div>
@@ -79,7 +116,8 @@
                   <div class="field">
                     <label class="label">Confirmar contraseña</label>
                     <div class="control">
-                      <input class="input" type="password" id="confirmPassword" placeholder="Confirma la contraseña" required>
+                      <input class="input" type="password" id="confirmPassword" placeholder="Confirma la contraseña"
+                        required>
                     </div>
                     <p class="help is-danger" id="confirmHelp">Las contraseñas no coinciden</p>
                   </div>
@@ -104,7 +142,8 @@
 
               <div class="field mt-5">
                 <div class="control">
-                  <button type="submit" class="button is-fullwidth" style="background:#3ea24a;color:#fff">Registrarme</button>
+                  <button type="submit" class="button is-fullwidth"
+                    style="background:#3ea24a;color:#fff">Registrarme</button>
                 </div>
               </div>
 
@@ -121,9 +160,9 @@
   <!-- Font Awesome for icons (optional) -->
   <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
   <script>
-    // Validaciones simples en front-end
+    // Validaciones simples en front-end y envío a PHP
     const form = document.getElementById('registerForm');
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       // ocultar ayudas
@@ -147,14 +186,35 @@
 
       if (!valid) return;
 
-      // Aquí podrías enviar los datos al servidor con fetch/AJAX
-      const data = { fullName, username, email, password, role };
-      console.log('Enviar datos de registro:', data);
+      const submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.classList.add('is-loading');
 
-      // Simulación de éxito
-      alert('Registro completado. Revisa tu correo para confirmar la cuenta.');
-      form.reset();
+      try {
+        const response = await fetch('../../../src/backend/auth/register.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ fullName, username, email, password, role })
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          alert('Usuario registrado exitosamente: ' + result.userId);
+          window.location.href = 'login.html';
+        } else {
+          alert('Error: ' + (result.error || 'No se pudo registrar'));
+        }
+
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Error de conexión con el servidor');
+      } finally {
+        submitBtn.classList.remove('is-loading');
+      }
     });
   </script>
 </body>
+
 </html>
