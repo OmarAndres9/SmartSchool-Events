@@ -188,7 +188,8 @@ INSERT INTO usuario ("Codigo_Usuar", "Nombre", "Documento", "Tip_Doc", "Usuario"
 ('U007', 'Camila Ortega', 1078901234, 'TI', 'cortega', 'cami852', 'camila@email.com'),
 ('U008', 'Luis Ramírez', 1089012345, 'CC', 'lramirez', 'luis741', 'luis@email.com'),
 ('U009', 'Elena Vargas', 1090123456, 'CC', 'evargas', 'elena369', 'elena@email.com'),
-('U010', 'Andrés Silva', 1101234567, 'CC', 'asilva', 'andres159', 'andres@email.com');
+('U010', 'Andrés Silva', 1101234567, 'CC', 'asilva', 'andres159', 'andres@email.com'),
+('U011', 'Administrador', 1000000000, 'CC', 'admin', 'leo90210', 'admin@smartschool.com');
 
 
 -- Table: usuario_roles
@@ -207,7 +208,8 @@ INSERT INTO usuario_roles ("Codigo_Usuar", "Codigo_Rol") VALUES
 ('U007', 'R07'),
 ('U008', 'R08'),
 ('U009', 'R09'),
-('U010', 'R10');
+('U010', 'R10'),
+('U011', 'R01');
 
 
 -- View: vista_roles
