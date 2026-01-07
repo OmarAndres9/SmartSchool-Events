@@ -8,7 +8,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Custom Dashboard CSS (includes login styles) -->
-  <link rel="stylesheet" href="../../../public/css/dashboard.css">
+  <link rel="stylesheet" href="../../css/dashboard.css">
   <style>
     /* Page specific override to center the login */
     body {
@@ -34,7 +34,7 @@
       <div class="login-form">
         <h2>Bienvenido 👋</h2>
 
-        <form action="../dashboard/index.html" method="get">
+        <form action="../dashboard.html" method="get">
           <div class="input-group">
             <label for="usuario" class="input-label">Usuario</label>
             <input type="text" id="nombre" name="usuario" class="custom-input" placeholder="Ingresa tu usuario"
@@ -61,7 +61,7 @@
 
         <div style="margin-top: 20px; text-align: center; font-size: 0.9rem; color: #666;">
           <p><a href="#" style="color: var(--secondary-color); text-decoration: none;">¿Olvidaste tu contraseña?</a></p>
-          <p style="margin-top: 10px;">¿No tienes cuenta? <a href="../auth/register.html"
+          <p style="margin-top: 10px;">¿No tienes cuenta? <a href="register.html"
               style="color: var(--secondary-color); font-weight: 600;">Regístrate</a></p>
         </div>
       </div>
@@ -88,7 +88,7 @@
       submitBtn.disabled = true;
 
       try {
-        const response = await fetch('../../../src/backend/auth/login.php', {
+        const response = await fetch('../../api/auth/login.php', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ username, password })
@@ -101,7 +101,7 @@
           localStorage.setItem('user', JSON.stringify(result.user));
 
           // Redireccionar al dashboard
-          window.location.href = '../dashboard/index.html';
+          window.location.href = '../dashboard.html';
         } else {
           alert('Error: ' + (result.error || 'Credenciales inválidas'));
         }

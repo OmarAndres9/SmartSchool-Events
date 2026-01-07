@@ -10,7 +10,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Custom Dashboard CSS -->
-  <link rel="stylesheet" href="../../../public/css/dashboard.css">
+  <link rel="stylesheet" href="../../css/dashboard.css">
 </head>
 
 <body>
@@ -22,10 +22,10 @@
     </div>
 
     <div class="sidebar-menu">
-      <a href="../home/home.html" class="menu-link">
+      <a href="../../index.html" class="menu-link">
         <i class="fas fa-home"></i> Inicio
       </a>
-      <a href="../dashboard/index.html" class="menu-link">
+      <a href="../dashboard.html" class="menu-link">
         <i class="fas fa-calendar-alt"></i> Agenda Escolar
       </a>
       <a href="../event/event.html" class="menu-link active">
@@ -63,7 +63,7 @@
           </div>
         </div>
         <div style="width: 1px; height: 30px; background: #eee; margin: 0 10px;"></div>
-        <img src="../../../public/img/docente.jpg" alt="User" class="avatar">
+        <img src="../../img/docente.jpg" alt="User" class="avatar">
       </div>
     </nav>
 
@@ -187,7 +187,7 @@
 
       try {
         // Nota: Se requiere implementar create.php primero, pero lo dejaremos apuntado
-        const response = await fetch('../../../src/backend/events/create.php', {
+        const response = await fetch('../../api/events/create.php', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(eventData)

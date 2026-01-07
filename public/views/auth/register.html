@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <style>
     body {
-      background-image: url(../../../public/img/event.jpg);
+      background-image: url(../../img/event.jpg);
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -148,7 +148,7 @@
               </div>
 
               <div class="has-text-centered">
-                <p class="is-size-7">¿Ya tienes cuenta? <a href="../auth/login.html" id="toLogin">Inicia sesión</a></p>
+                <p class="is-size-7">¿Ya tienes cuenta? <a href="login.html" id="toLogin">Inicia sesión</a></p>
               </div>
             </form>
           </div>
@@ -190,7 +190,7 @@
       submitBtn.classList.add('is-loading');
 
       try {
-        const response = await fetch('../../../src/backend/auth/register.php', {
+        const response = await fetch('../../api/auth/register.php', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
