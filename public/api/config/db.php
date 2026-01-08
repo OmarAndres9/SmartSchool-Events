@@ -1,9 +1,9 @@
 <?php
 // Configuración de la base de datos PostgreSQL
-$host = 'localhost';
+$host = '127.0.0.1';
 $db = 'school_event';
 $user = 'postgres'; // CAMBIAR POR TU USUARIO REAL
-$pass = '1234'; // CAMBIAR POR TU CONTRASEÑA REAL
+$pass = 'ADMIN12345'; // CAMBIAR POR TU CONTRASEÑA REAL
 $port = '5432';
 
 $dsn = "pgsql:host=$host;port=$port;dbname=$db";
